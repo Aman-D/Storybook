@@ -1,0 +1,60 @@
+<%if(stories.length === 0){%>
+<div class="row">
+  <img
+    src="/images/no_data.svg"
+    alt="No stories"
+    class="responsive-image no-story-banner"
+  />
+  <div class="container center-align no-story-call-to-action">
+    <div class="card-panel hoverable center">
+      <p>Oops! Your story book is empty. An empty book dosen't looks good 😢</p>
+      <p>Let's write a new story 😃</p>
+      <a class="btn no-story-btn blue lighten-2" href="/story/new">
+        Click to start with your first Story
+      </a>
+    </div>
+  </div>
+</div>
+<%} else{ %>
+<div class="row">
+  <h3>Your Stories</h3>
+  <table class="striped centered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%for(var i = 0; i< stories.length; i++){%>
+      <tr>
+        <td><%= stories[i].title %></td>
+        <td><%= helper.formatDate(stories[i].createdAt, 'MMM Do YYYY' )%></td>
+        <td><%= stories[i].status %></td>
+        <%if(stories[i].status === 'private'){%>
+        <td>
+          <a href="/story/edit/<%=stories[i]._id%>"
+            ><i class="material-icons">edit</i></a
+          >
+        </td>
+        <%}else {%>
+        <td>-</td>
+        <%}%>
+        <td>
+          <form action="/story/delete/<%=stories[i]._id%>" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit" class="btn red darken-1 circle">
+              <i class="material-icons">delete</i>
+            </button>
+          </form>
+        </td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</div>
+<%}%>

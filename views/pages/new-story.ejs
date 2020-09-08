@@ -1,0 +1,37 @@
+<div class="row new-story">
+  <form action="/story/new" method="POST" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input
+          placeholder="Title"
+          id="title"
+          type="text"
+          class="validate"
+          name="title"
+        />
+        <label for="title">Title</label>
+      </div>
+      <div class="input-field col s6">
+        <select id="status" name="status">
+          <option value="public" selected>Public</option>
+          <option value="private">Private</option>
+        </select>
+        <label for="status">Publish type</label>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <p class="center" style="padding: 10px;">Start with your story</p>
+    <div class="divider"></div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="body" class="materialize-textarea" name="body"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <a class="waves-effect waves-light btn red darken-2">Cancel</a>
+      <button type="submit" class="waves-effect waves-light btn blue">
+        Publish
+      </button>
+    </div>
+  </form>
+</div>

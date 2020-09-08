@@ -1,0 +1,20 @@
+html {
+  font-family: "Ubuntu", sans-serif;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  overflow-x: hidden;
+}
+
+.fixed-action-btn {
+  left: 50%;
+  bottom: 10%;
+  transition: all ease 0.5s;
+}
+.fixed-action-btn:hover {
+  transform: translateY(-10px);
+}

@@ -1,0 +1,14 @@
+.login {
+  max-width: 480px;
+}
+.icon {
+  color: #e53935;
+  font-size: 2rem;
+  margin-top: 5px;
+}
+.divider {
+  margin: 5px 0;
+}
+.login-btn {
+  margin: 5px 0;
+}

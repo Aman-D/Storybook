@@ -1,0 +1,32 @@
+<h2>Story Book</h2>
+<div class="row">
+  <%for(var i = 0; i< stories.length; i++){%>
+  <div class="col l6 m12">
+    <div class="card blue-grey darken-1 hoverable">
+      <div class="card-content white-text">
+        <span class="card-title"><%= stories[i].title%></span>
+        <p><%= helper.formatDate(stories[i].createdAt,'MMMM Do YYYY') %></p>
+        <div class="chip">
+          <img src="<%= stories[i].author.image%>" alt="profile image" />
+          <a href="/story/user/<%= stories[i].author._id %>"
+            ><%= stories[i].author.displayName %></a
+          >
+        </div>
+        <div class="divider"></div>
+        <p class="all-story-body truncate">
+          <%= helper.strip(stories[i].body)%>
+        </p>
+      </div>
+      <div class="card-action" style="display: flex; align-items: center;">
+        <a href="/story/<%= stories[i]._id %>">Read Story</a>
+        <%if(stories[i].author._id.toString() === loggedUserId.toString()){%>
+        <form action="/story/delete/<%=stories[i]._id%>" method="post">
+          <input type="hidden" name="_method" value="DELETE" />
+          <input type="submit" value="DELETE" />
+        </form>
+        <%}%>
+      </div>
+    </div>
+  </div>
+  <%}%>
+</div>

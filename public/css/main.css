@@ -1,0 +1,41 @@
+.icon {
+  font-size: 1rem;
+}
+.sidenav-header {
+  padding: 15px;
+}
+.header-title {
+  font-size: 1.8rem;
+}
+.sidenav-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+}
+.no-story-banner {
+  display: block;
+  width: initial;
+  height: fit-content;
+}
+.no-story-call-to-action {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.no-story-btn {
+  margin-top: 20px;
+}
+.chip {
+  margin: 12px 0;
+}
+
+.story-body {
+  margin-top: 2rem;
+}
+
+.btn-flat {
+  border: 1px solid black;
+  padding: 0;
+  margin: 0;
+}
